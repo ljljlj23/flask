@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>index</title>
+</head>
+<body>
+  <h1>我是Index</h1>
+  {{ name }}
+  {{ age }}
+  <hr>
+  {{ name.upper() }}
+  <hr>
+  {{ name.replace('a','x') }}
+  <hr>
+  {{ name.1 }}
+  <hr>
+  {{ name + '好水' }}
+  <hr>
+  {{ name.split('a') }}
+  <h2>jinja2循环</h2>
+  {% for one in name %}
+      {{ one }}<br>
+  {% endfor %}
+  <hr>
+  <h2>jinja2判断</h2>
+  {% if name == 'hahaha' %}
+      <p>正确</p>
+  {% else %}
+      {{ name }}
+  {% endif %}
+  <hr>
+  <h2>字典</h2>
+  {{ mydict['math'] }}<br>
+  {{ mydict.math }}<br>
+  {{ mydict.get('math') }}<br>
+  <hr>
+  {% for key in mydict.keys() %}
+      {{ key }}:{{ mydict.get(key) }}<br>
+  {% endfor %}
+  <hr>
+  <img src="/static/bqb.jpg">
+</body>
+</html>
