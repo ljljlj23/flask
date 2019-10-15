@@ -15,7 +15,7 @@ app = Flask(__name__)
 # app.config['DEBUG'] = True
 
 # app.config.from_pyfile('settings.py')    # 使用python文件做配置
-app.config.from_object('settings.TestConfig')    # 使用类对象
+app.config.from_object('settings.Config')    # 使用类对象
 # app.config.from_envvar()    # 环境变量中加载
 # app.config.from_json()    # 从json串中加载
 # app.config.from_mapping()    # mapping->字典类型

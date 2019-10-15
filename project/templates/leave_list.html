@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}
+    请假条
+{% endblock %}
+{% block style %}
+    <style>
+        th {
+            text-align: center;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <form action="" method="post">
+        <table class="table table-bordered">
+            <tr>
+                <th colspan="4" style="text-align: center">
+                    <h1>请假条</h1>
+                </th>
+            </tr>
+            <tr>
+                <th>请假人姓名</th>
+                <td><input type="text" name="username" value="{{ user.name }}" disabled class="form-control form-control-user"></td>
+                <th>请假类型</th>
+                <td>
+                    <select name="type" class="form-control form-control-user">
+                        <option value="事假" selected>事假</option>
+                        <option value="病假">病假</option>
+                        <option value="婚假">婚假</option>
+                        <option value="产假">产假</option>
+                        <option value="缺勤">缺勤</option>
+                        <option value="加班">加班</option>
+                        <option value="出差">出差</option>
+                        <option value="调休">调休</option>
+                        <option value="其他">其他</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>开始时间</th>
+                <td><input type="date" name="start" class="form-control form-control-user"></td>
+                <th>结束时间</th>
+                <td><input type="date" name="end" class="form-control form-control-user"></td>
+            </tr>
+            <tr>
+                <th>联系方式</th>
+                <td><input type="text" name="phone" placeholder="请预留电话号码" class="form-control form-control-user"></td>
+                <th>请假天数</th>
+                <td><input type="number" name="days" class="form-control form-control-user"></td>
+            </tr>
+            <tr>
+                <th>请假描述</th>
+                <td colspan="3"><textarea name="dec" cols="85" class="form-control form-control-user"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: center">
+                    <input type="submit" value="提交" class="btn btn-primary">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <p style="color: red">{{ error }}</p>
+{% endblock %}

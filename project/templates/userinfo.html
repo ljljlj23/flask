@@ -14,29 +14,45 @@
                 <h6 class="m-0 font-weight-bold text-primary">个人详情</h6>
               </div>
               <div class="card-body">
-                  <table class="table">
-                      <tr>
-                          <td rowspan="3" style="width: 300px;">
-                              <img style="width: 100%" src="/static/img/sg.jpg" alt="">
-                          </td>
-                          <th>姓名</th>
-                          <td>老王</td>
-                          <th>年龄</th>
-                          <td>19</td>
-                      </tr>
-                      <tr>
-                          <th>性别</th>
-                          <td>男</td>
-                          <th>身份</th>
-                          <td>讲师</td>
-                      </tr>
-                      <tr>
-                          <th>学科</th>
-                          <td>python</td>
-                          <th>阶段</th>
-                          <td>第三阶段</td>
-                      </tr>
-                  </table>
+                  <form action="" method="post" enctype="multipart/form-data">
+                      <table class="table">
+                          <tr>
+                              <td rowspan="3" style="width: 300px;">
+                                  <img style="width: 100%" src="/static/{{ user.photo }}" alt="">
+                                  <input type="file" name="photo">
+                              </td>
+                              <th>姓名</th>
+                              <td><input name="name" type="text" value="{{ user.name }}"></td>
+                              <th>年龄</th>
+                              <td><input name="age" type="text" value="{{ user.age }}"></td>
+                          </tr>
+                          <tr>
+                              <th>性别</th>
+                              <td>
+                                  {% if user.sex == 0 %}
+                                      <input name="sex" type="text" value="女">
+                                  {% elif user.sex == 1 %}
+                                      <input name="sex" type="text" value="男">
+                                  {% else %}
+                                      <input name="sex" type="text" value="{{ user.sex }}">
+                                  {% endif %}
+                              </td>
+                              <th>身份</th>
+                              <td><input name="identity" type="text" value="{{ user.identity }}"></td>
+                          </tr>
+                          <tr>
+                              <th>学科</th>
+                              <td><input name="subject" type="text" value="{{ user.subject }}"></td>
+                              <th>阶段</th>
+                              <td><input name="level" type="text" value="{{ user.level }}"></td>
+                          </tr>
+                          <tr>
+                              <td colspan="5" style="text-align: center;">
+                                  <input type="submit" value="提交">
+                              </td>
+                          </tr>
+                      </table>
+                  </form>
               </div>
             </div>
 
